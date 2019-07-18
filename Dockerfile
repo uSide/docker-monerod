@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-ENV MONERO_CHECKSUM=693e1a0210201f65138ace679d1ab1928aca06bb6e679c20d8b4d2d8717e50d6
+ENV MONERO_CHECKSUM=2b95118f53d98d542a85f8732b84ba13b3cd20517ccb40332b0edd0ddf4f8c62
 
 RUN apt-get update && apt-get install -y wget bzip2 && apt-get clean
 
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y wget bzip2 && apt-get clean
 RUN wget https://downloads.getmonero.org/linux64 \
     && echo "${MONERO_CHECKSUM} linux64" | sha256sum -c \
     && mkdir monero \
-    && tar -xjvf linux64 -C monero \
+    && tar -xvf linux64 -C monero \
     && ls -la monero \
     && cp monero/*/* /usr/local/bin \
     && rm -rf monero linux64
