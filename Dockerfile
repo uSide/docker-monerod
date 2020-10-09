@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-ENV MONERO_CHECKSUM=4615b9326b9f57565193f5bfe092c05f7609afdc37c76def81ee7d324cb07f35
+ENV MONERO_CHECKSUM=2335716555ff0428da0f206a491d9c57b7ae2221d1cfbbb3bf43960d3a2a4dfe
 
 RUN apt-get update && apt-get install -y wget bzip2 && apt-get clean
 
